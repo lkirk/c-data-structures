@@ -8,7 +8,7 @@ CFLAGS += -g
 all: $(OBJS)
 
 %: %.c
-	$(CC) $(CFLAGS) -c -o $^ $@ 
+	$(CC) $(CFLAGS) -c $^ $@
 
 test:
 	for obj in $(OBJS); do \
