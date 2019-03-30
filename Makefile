@@ -10,6 +10,11 @@ all: $(OBJS)
 %: %.c
 	$(CC) $(CFLAGS) -c -o $^ $@ 
 
+test:
+	for obj in $(OBJS); do \
+		./$$obj; \
+	done
+
 .PHONY: clean
 clean:
 	rm -f $(OBJS)
