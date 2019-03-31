@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "errors.h"
+
 // Simple singly linked list
 // Currently, data is uint32 values
 // Experimenting with the interface
@@ -17,7 +19,10 @@ typedef struct node list;
 static inline list *new_node() {
   list *l;
   l = malloc(sizeof(*l));
-  // TODO: error no malloc
+  // TODO: propogate errors
+  if (!l) {
+    die(OOM);
+  }
   l->next = NULL;
   return l;
 };
