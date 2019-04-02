@@ -12,6 +12,7 @@ static inline char *resolve_error_str(error_t err) {
   case OK:
     return (char *)"";
   }
+  return (char *)"";
 };
 
 void die(error_t err) {
