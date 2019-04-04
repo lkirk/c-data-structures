@@ -9,12 +9,10 @@
 // Experimenting with the interface
 // Errors?
 
-struct node {
+typedef struct node {
   int32_t data;
   struct node *next;
-};
-
-typedef struct node list;
+} list;
 
 static inline list *new_node() {
   list *l;
